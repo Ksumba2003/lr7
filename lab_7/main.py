@@ -8,7 +8,12 @@ from lab_7.utils.safe_int_input import safe_int_input
 
 def main():
     while True:
-        print_menu()
+        print("Здравствуйте!\n"
+              "Список существующих баз данных:\n"
+              "1. Ученики\n"
+              "2. Школы\n"
+              "3. Учителя\n"
+              "4. Классы\n")
         db_number = safe_int_input("Выберите базу данных для работы: ")
         if db_number == 1:
             students_menu()
@@ -18,15 +23,6 @@ def main():
             teachers_menu()
         elif db_number == 4:
             classes_menu()
-
-
-def print_menu():
-    print("Здравствуйте!\n"
-          "Список существующих баз данных:\n"
-          "1. Ученики\n"
-          "2. Школы\n"
-          "3. Учителя\n"
-          "4. Классы\n")
 
 
 if __name__ == "__main__":
