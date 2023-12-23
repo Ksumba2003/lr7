@@ -1,27 +1,33 @@
-import components.teachers.service as teacher
+from lab_7.classes_menu import classes_menu
+
+from lab_7.schools_menu import schools_menu
+from lab_7.students_menu import students_menu
+from lab_7.teachers_menu import teachers_menu
+from lab_7.utils.safe_int_input import safe_int_input
 
 
-# print(teacher.create_one({
-#       "name": "Тест Тест",
-#       "courses_id": [
-#           1,
-#           2
-#       ],
-#       "contacts": {
-#           "email": "тест@example.com",
-#           "phone": "+333333"
-#       }}))
+def main():
+    while True:
+        print_menu()
+        db_number = safe_int_input("Выберите базу данных для работы: ")
+        if db_number == 1:
+            students_menu()
+        elif db_number == 2:
+            schools_menu()
+        elif db_number == 3:
+            teachers_menu()
+        elif db_number == 4:
+            classes_menu()
 
 
-print(teacher.delete_one_by_id(4))
+def print_menu():
+    print("Здравствуйте!\n"
+          "Список существующих баз данных:\n"
+          "1. Ученики\n"
+          "2. Школы\n"
+          "3. Учителя\n"
+          "4. Классы\n")
 
-# print(teacher.get_all())
 
-# print(teacher.get_one_by_id(1))
-
-# print(teacher.update_one_by_id(4, {
-#       "name": "Не Смирнова Екатерина",
-#       "contacts": {
-#           "email": "нет@example.com",
-#           "phone": "+1122334455"
-#       }}))
+if __name__ == "__main__":
+    main()

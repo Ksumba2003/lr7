@@ -1,0 +1,10 @@
+DROP TABLE teachers IF EXISTS;
+DROP TABLE schools IF EXISTS;
+DROP TABLE students IF EXISTS;
+DROP TABLE classes IF EXISTS;
+
+CREATE TABLE teachers (
+    id INT UNIQUE PRIMARY KEY,
+    name TEXT,
+
+)
